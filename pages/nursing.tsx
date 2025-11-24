@@ -5,10 +5,10 @@ import {
 } from "@plasmicapp/loader-nextjs";
 import { PLASMIC } from "../plasmic-init";
 
-export default function DemoPage() {
+export default function NursingPage() {
   return (
     <PlasmicRootProvider loader={PLASMIC}>
-      <PlasmicComponent component="demo-page" />
+      <PlasmicComponent component="nursing" />
     </PlasmicRootProvider>
   );
 }

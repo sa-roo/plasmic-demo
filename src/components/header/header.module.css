@@ -1,0 +1,272 @@
+.header {
+  width: 100%;
+  max-width: 100vw;
+  height: 86px;
+  background: linear-gradient(to right, #e6f3ff 0%, #ffffff 100%);
+  border-top: 1px solid #0066cc;
+  border-bottom: 1px solid #0066cc;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+/* Logo Section */
+.logoSection {
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  height: auto;
+  max-height: 70px;
+  width: auto;
+  display: block;
+}
+
+/* Navigation Section */
+.navSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.navItemWrapper {
+  position: relative;
+}
+
+.separator {
+  color: #ff69b4;
+  margin: 0 12px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.navLink {
+  color: #4a4a4a;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: #003366;
+}
+
+.dropdownIcon {
+  font-size: 10px;
+  color: #4a4a4a;
+  margin-left: 4px;
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.navItemWrapper:hover .dropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.dropdownContent {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 16px;
+  min-width: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdownContent::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(187, 134, 252, 0.1), rgba(139, 195, 74, 0.1));
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.dropdownContent::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, rgba(100, 181, 246, 0.1), rgba(156, 39, 176, 0.1));
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.courseCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.courseCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.courseCard:nth-child(1),
+.courseCard:nth-child(3),
+.courseCard:nth-child(6) {
+  background: linear-gradient(to right, white 0%, rgba(187, 134, 252, 0.05) 100%);
+}
+
+.courseIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconSymbol {
+  width: 24px;
+  height: 24px;
+  color: #2c3e50;
+  stroke-width: 2;
+}
+
+.courseInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.courseTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  font-family: sans-serif;
+  line-height: 1.2;
+}
+
+.courseDescription {
+  margin: 0;
+  font-size: 13px;
+  color: #7f8c8d;
+  font-family: sans-serif;
+  line-height: 1.3;
+}
+
+.courseArrow {
+  color: #4caf50;
+  font-size: 18px;
+  font-weight: bold;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.courseCard:hover .courseArrow {
+  opacity: 1;
+}
+
+/* Action Buttons Section */
+.actionSection {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.loginButton {
+  color: #228b22;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 500;
+  padding: 8px 16px;
+  transition: color 0.2s;
+}
+
+.loginButton:hover {
+  color: #006400;
+}
+
+.signUpButton {
+  background-color: #20b2aa;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.signUpButton:hover {
+  background-color: #1a9a94;
+}

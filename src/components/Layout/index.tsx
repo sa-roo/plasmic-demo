@@ -1,14 +1,23 @@
-import Footer from "../Footer";
-import Header from "../Header";
+import React, { ReactNode } from "react";
+import Header from "../header/header";
+import Footer from "../footer/footer";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+interface LayoutProps {
+  children: ReactNode;
+  hideLayout?: boolean;
+}
+
+const Layout = ({ children, hideLayout }: LayoutProps) => {
+  if (hideLayout) {
+    return <>{children}</>; // render children without layout wrapper
+  }
   return (
-    <div>
+    <div className="layout-wrapper">
       <Header />
       {children}
       <Footer />
     </div>
-  );
+  ); // render with layout
 };
 
 export default Layout;

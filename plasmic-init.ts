@@ -1,10 +1,12 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
+import Layout from "./src/components/Layout";
 
 export const PLASMIC = initPlasmicLoader({
   projects: [
     {
       id: "mcwiUf8uhPZmUZ1s8vCaKH",
-      token: "LGsyQf4CqGHi7SfSvM2u3a2WzqnGNryrXbBkqLeLbPlcAcp3lXLMWZ0oB0dTpfd4MsygxLoaMQtDicZzVFlq4w",
+      token:
+        "LGsyQf4CqGHi7SfSvM2u3a2WzqnGNryrXbBkqLeLbPlcAcp3lXLMWZ0oB0dTpfd4MsygxLoaMQtDicZzVFlq4w",
     },
   ],
 
@@ -13,6 +15,18 @@ export const PLASMIC = initPlasmicLoader({
   // project, allowing you to see your designs without publishing.  Please
   // only use this for development, as this is significantly slower.
   preview: false,
+});
+
+PLASMIC.registerGlobalContext(Layout, {
+  name: "Layout",
+  props: {
+    children: {
+      type: "object",
+    },
+    hideLayout: {
+      type: "boolean",
+    },
+  },
 });
 
 // You can register any code components that you want to use here; see
